@@ -5,10 +5,12 @@ import kotlinx.coroutines.experimental.*
 
 fun main(args: Array<String>) {
 
+
+    println("Starting here")
     launch(CommonPool) {
-        delay(1000L)
-        println("World!")
+
+        suspendableProcess()
     }
-    println("Hello,")
-    Thread.sleep(2000L)
+    println("Ending here")
+    while (true) {}
 }

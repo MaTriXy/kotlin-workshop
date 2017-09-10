@@ -4,22 +4,32 @@ import kotlinx.coroutines.experimental.*
 import kotlin.concurrent.*
 
 
-fun main(args: Array<String>) {
-
-    coroutines()
-    //  threads()
-
-}
-
 fun threads() {
     val jobs = 1..100000
     jobs.forEach {
+
         thread {
             Thread.sleep(1000L)
             print(".")
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 fun coroutines() = runBlocking {
@@ -30,4 +40,13 @@ fun coroutines() = runBlocking {
         }
     }
     jobs.forEach { it.join() }
+}
+
+
+
+fun main(args: Array<String>) {
+
+    coroutines()
+    // threads()
+
 }

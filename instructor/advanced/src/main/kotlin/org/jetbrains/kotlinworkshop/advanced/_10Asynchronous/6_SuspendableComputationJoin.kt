@@ -4,12 +4,11 @@ import kotlinx.coroutines.experimental.*
 
 
 fun main(args: Array<String>) = runBlocking {
-
+    println("Starting here")
     val job = launch(CommonPool) {
-        delay(1000L)
-        println("World!")
+        suspendableProcess()
     }
-    println("Hello, ")
+    println("Ending here")
     job.join()
 }
 
